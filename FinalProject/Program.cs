@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace FinalProject
 {
     public class Program
@@ -6,6 +8,10 @@ namespace FinalProject
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+
+            builder.Services.AddDbContext<LibraryContext>(options =>
+                options.UseInMemoryDatabase("LibraryDb"));
 
             // Add services to the container.
 
