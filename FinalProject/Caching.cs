@@ -1,2 +1,0 @@
-//aaaaaa
-builder.Services.AddMemoryCache();
