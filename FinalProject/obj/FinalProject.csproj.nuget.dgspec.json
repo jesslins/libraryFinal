@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abeeb\\OneDrive\\Documents\\Wonderland\\High School\\mitt\\grade 12\\methodologies\\libraryFinal\\FinalProject\\FinalProject.csproj": {}
+    "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\FinalProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abeeb\\OneDrive\\Documents\\Wonderland\\High School\\mitt\\grade 12\\methodologies\\libraryFinal\\FinalProject\\FinalProject.csproj": {
+    "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abeeb\\OneDrive\\Documents\\Wonderland\\High School\\mitt\\grade 12\\methodologies\\libraryFinal\\FinalProject\\FinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\FinalProject.csproj",
         "projectName": "FinalProject",
-        "projectPath": "C:\\Users\\Abeeb\\OneDrive\\Documents\\Wonderland\\High School\\mitt\\grade 12\\methodologies\\libraryFinal\\FinalProject\\FinalProject.csproj",
-        "packagesPath": "C:\\Users\\Abeeb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abeeb\\OneDrive\\Documents\\Wonderland\\High School\\mitt\\grade 12\\methodologies\\libraryFinal\\FinalProject\\obj\\",
+        "projectPath": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\FinalProject.csproj",
+        "packagesPath": "C:\\Users\\Jessi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Abeeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jessi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,12 +34,25 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -64,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
