@@ -2,6 +2,9 @@
 using FinalProject.Models;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using FinalProject.Models;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Builder;
 
 namespace FinalProject
 {
@@ -110,6 +113,11 @@ namespace FinalProject
                 app.UseSwaggerUI();
             }
 
+            //// caching for books
+            //app.MapGet("/books/memory-cache", GetBooksWithMemoryCache);
+            //// caching for authors
+            //app.MapGet("/authors/memory-cache", GetAuthorsWithMemoryCache);
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
@@ -119,5 +127,54 @@ namespace FinalProject
 
             app.Run();
         }
+
+
+        // books from library memory
+        //private static async Task<IResult> GetBooksWithMemoryCache(BookRepository repo, IMemoryCache cache)
+        //{
+        //    // key for identifying cached data! 
+        //    // book_list = Id for cache entry
+        //    const string cacheBookKey = "book_list";
+        //    //const string cacheAuthorKey = "book_author_list";
+        //    //const string cacheGenreKey = "book_genre_list";
+
+        //    //checking if the cache contains data w/ key
+        //    if (!cache.TryGetValue(cacheBookKey, out List<Book>? books))
+        //    {
+        //        // need to "Cache frequently accessed book data for faster retrieval."
+        //        // should call GetBooks method from BooksRepository to ^
+        //        books = await repo.GetBooks();
+        //        // after data had been retreived, tis stored in memory under the key "book_list"
+        //        cache.Set(cacheBookKey, books);
+        //    }
+
+        //    return Results.Ok(new
+        //    {
+        //        Data = books
+        //    });
     }
-}
+
+    // book authors from library memory
+    //private static async Task<IResult> GetAuthorsWithMemoryCache(AuthorRepository repo, IMemoryCache cache)
+    //{
+    //    // key for identifying cached data! 
+    //    const string cacheAuthorKey = "book_author_list";
+
+    //    //checking if the cache contains data w/ key
+    //    if (!cache.TryGetValue(cacheAuthorKey, out List<Author>? authors))
+    //    {
+    //        // need to "Cache frequently accessed book data for faster retrieval."
+    //        // should call GetBooks method from BooksRepository to ^
+    //        authors = await repo.GetAuthors();
+    //        // after data had been retreived, tis stored in memory under the key "book_list"
+    //        cache.Set(cacheAuthorKey, authors);
+    //    }
+
+    //    return Results.Ok(new
+    //    {
+    //        Data = authors
+    //    });
+    //}
+
+    }
+
