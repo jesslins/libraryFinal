@@ -35,30 +35,39 @@ namespace FinalProject
 
             // 1st GET all authours
             app.MapGet("/authors", (LibraryContext db) =>
-                 db.Authors
-                   .Include(a => a.Books)
-                   .Select(a => new AuthorDto
-                   {
-                       Id = a.Id,
-                       Name = a.Name,
-                       Books = a.Books.Select(b => new BookDto
-                       {
-                           Id = b.Id,
-                           Title = b.Title
-                       }).ToList()
-                   }).ToList());
-
+            {
+                var authors = db.Authors
+                    .Include(a => a.Books)
+                    .Select(a => new AuthorDto
+                    {
+                        Id = a.Id,
+                        Name = a.Name,
+                        Books = a.Books.Select(b => new BookDto
+                        {
+                            Id = b.Id,
+                            Title = b.Title
+                        }).ToList()
+                    }).ToList();
+                return Results.Ok(authors);
+            })
+            .Produces<List<AuthorDto>>(StatusCodes.Status200OK) // Document the successful response
+            .Produces(StatusCodes.Status500InternalServerError); // Possible failure status
 
             // 2nd GET all books
             app.MapGet("/books", (LibraryContext db) =>
-               db.Books
-                 .Include(b => b.Author)
-                 .Select(b => new
-                 {
-                     Id = b.Id,
-                     Title = b.Title,
-                     AuthorName = b.Author.Name
-                 }).ToList());
+            {
+                var books = db.Books
+                              .Include(b => b.Author)
+                              .Select(b => new
+                              {
+                                  Id = b.Id,
+                                  Title = b.Title,
+                                  AuthorName = b.Author.Name
+                              }).ToList();
+                return Results.Ok(books);
+            })
+            .Produces<List<object>>(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status500InternalServerError);
 
             // 1 POST create new authour
             app.MapPost("/authors", (LibraryContext db, Author author) =>
@@ -66,7 +75,9 @@ namespace FinalProject
                 db.Authors.Add(author);
                 db.SaveChanges();
                 return Results.Created($"/authors/{author.Id}", author);
-            });
+            })
+            .Produces<Author>(StatusCodes.Status201Created)
+            .Produces(StatusCodes.Status400BadRequest);
 
             // 2 POST create new book
             app.MapPost("/books", (LibraryContext db, Book book) =>
@@ -82,7 +93,9 @@ namespace FinalProject
                 author.Books.Add(book);
                 db.SaveChanges();
                 return Results.Created($"/books/{book.Id}", new { book.Id, book.Title, AuthorId = book.AuthorId});
-            });
+            })
+            .Produces(StatusCodes.Status404NotFound)
+            .Produces(StatusCodes.Status201Created);
 
             // 1 PUT completely update an author
             app.MapPut("/authors/{id}", (LibraryContext db, int id, Author updatedAuthor) =>
@@ -93,7 +106,9 @@ namespace FinalProject
                 author.Name = updatedAuthor.Name;
                 db.SaveChanges();
                 return Results.Ok(new {author.Id, author.Name});
-            });
+            })
+            .Produces<Author>(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound);
 
             // 2 PUT completely update a book
             app.MapPut("/books/{id}", (LibraryContext db, int id, Book updatedBook) =>
@@ -105,7 +120,9 @@ namespace FinalProject
                 book.AuthorId = updatedBook.AuthorId;
                 db.SaveChanges();
                 return Results.Ok(new { book.Id, book.Title, AuthorId = book.AuthorId });
-            });
+            })
+            .Produces<Book>(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound);
 
             // 1 DELETE author
             app.MapDelete("/authors/{id}", (LibraryContext db, int id) =>
@@ -116,7 +133,9 @@ namespace FinalProject
                 db.Authors.Remove(author);
                 db.SaveChanges();
                 return Results.Ok();
-            });
+            })
+            .Produces(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound);
 
             // 2 DELETE book
             app.MapDelete("/books/{id}", (LibraryContext db, int id) =>
@@ -127,7 +146,9 @@ namespace FinalProject
                 db.Books.Remove(book);
                 db.SaveChanges();
                 return Results.Ok();
-            });
+            })
+            .Produces(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound);
 
             // ------------------------------------
 
