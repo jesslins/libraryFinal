@@ -26,8 +26,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -36,10 +44,9 @@
               "RelativeDocumentMoniker": "FinalProject\\LibraryContext.cs",
               "ToolTip": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\LibraryContext.cs",
               "RelativeToolTip": "FinalProject\\LibraryContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAxAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:33:42.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T21:33:42.139Z"
             },
             {
               "$type": "Document",
@@ -51,8 +58,7 @@
               "RelativeToolTip": "FinalProject\\Models\\Book.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:32:57.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T21:32:57.3Z"
             },
             {
               "$type": "Document",
@@ -64,8 +70,7 @@
               "RelativeToolTip": "FinalProject\\Models\\Author.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:32:07.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T21:32:07.852Z"
             },
             {
               "$type": "Document",
@@ -75,18 +80,14 @@
               "RelativeDocumentMoniker": "FinalProject\\Program.cs",
               "ToolTip": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Program.cs",
               "RelativeToolTip": "FinalProject\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T21:31:11.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         }
