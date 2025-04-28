@@ -4,11 +4,16 @@ using Microsoft.EntityFrameworkCore;
 using FinalProject.Models;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.AspNetCore.Builder;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Runtime.Intrinsics.X86;
 
 namespace FinalProject
 {
     public class Program
     {
+        private static int pageNumber;
+        private static int pageSize;
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -160,6 +165,7 @@ namespace FinalProject
 
             // caching for books
             app.MapGet("/books/memory-cache", GetBooksWithMemoryCache);
+
             // caching for authors
             app.MapGet("/authors/memory-cache", GetAuthorsWithMemoryCache);
 
@@ -210,65 +216,90 @@ namespace FinalProject
 
 
         //books from library memory
-        private static async Task<IResult> GetBooksWithMemoryCache(BookRepository repo, IMemoryCache cache)
+        private static async Task<IResult> GetBooksWithMemoryCache(BookRepository repo, IMemoryCache cache, int pageNumber = 1, int pageSize = 5)
         {
-            // key for identifying cached data! 
-            // book_list = Id for cache entry
             const string cacheBookKey = "book_list";
 
-            //checking if the cache contains data w/ key
+            // Try to get the list of books from memory cache
             if (!cache.TryGetValue(cacheBookKey, out List<Book>? books))
             {
-                // need to "Cache frequently accessed book data for faster retrieval."
-                // should call GetBooks method from BooksRepository to ^
+                // If not found in cache, fetch from database
                 books = await repo.GetBooks();
-                // after data had been retreived, tis stored in memory under the key "book_list"
+
+                // Save the list into cache for next time
                 cache.Set(
                     cacheBookKey,
                     books,
                     new MemoryCacheEntryOptions
                     {
-                        // Set cache to expire after 10 minutes
-                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
-                        // Priority tells the cache how important this item is
-                        Priority = CacheItemPriority.High
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10), // cache expires in 10 minutes
+                        Priority = CacheItemPriority.High // keep this cache longer if possible
                     }
-                 );
-            }
-            else
-            {
-                // Cache hit: the data was already stored and is being reused
-                // No need to fetch from the repository again
+                );
             }
 
+            // pagination stuff
+            //Cache first, if not found get from database and cache it.
+            // Use Skip/ Take to show just the right slice of data.
+            //Return both data and metadata so our clients knows how many total items there are.
+
+            // Get only the part of the list we need (based on page number and size)
+            var paginatedBooks = books
+                .Skip((pageNumber - 1) * pageSize) // skip items from previous pages
+                .Take(pageSize)                   // take the items for this page
+                .ToList();
+
+            // Return paginated results along with some data 
             return Results.Ok(new
             {
-                Data = books
+                Data = paginatedBooks,   // books for this page
+                TotalCount = books.Count, // total number of books
+                PageNumber = pageNumber,  // current page
+                PageSize = pageSize       // size per page
             });
         }
+
 
         // book authors from library memory
-        private static async Task<IResult> GetAuthorsWithMemoryCache(AuthorRepository repo, IMemoryCache cache)
+        private static async Task<IResult> GetAuthorsWithMemoryCache(AuthorRepository repo, IMemoryCache cache, int pageNumber = 1, int pageSize = 5)
         {
-            // key for identifying cached data! 
             const string cacheAuthorKey = "book_author_list";
 
-            //checking if the cache contains data w/ key
+            // Try to get the list of authors from memory cache
             if (!cache.TryGetValue(cacheAuthorKey, out List<Author>? authors))
             {
-                // need to "Cache frequently accessed book data for faster retrieval."
-                // should call GetBooks method from BooksRepository to ^
+                // If not found, fetch from database
                 authors = await repo.GetAuthors();
-                // after data had been retreived, tis stored in memory under the key "book_list"
-                cache.Set(cacheAuthorKey, authors);
+
+                // Save the list into cache for next time
+                cache.Set(
+                    cacheAuthorKey,
+                    authors,
+                    new MemoryCacheEntryOptions
+                    {
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10), // expire in 10 minutes
+                        Priority = CacheItemPriority.High // important cache
+                    }
+                );
             }
 
+            // Paginate the list
+            var paginatedAuthors = authors
+                .Skip((pageNumber - 1) * pageSize) // skip previous pages
+                .Take(pageSize)                   // take this page's authors
+                .ToList();
+
+            // Return paginated authors and metadata
             return Results.Ok(new
             {
-                Data = authors
+                Data = paginatedAuthors,
+                TotalCount = authors.Count,
+                PageNumber = pageNumber,
+                PageSize = pageSize
             });
         }
+
     }
-  }
+}
 
 
