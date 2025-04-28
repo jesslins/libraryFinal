@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.csproj.AssemblyReference.cache
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.AssemblyInfoInputs.cache
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.AssemblyInfo.cs
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.sourcelink.json
+=======
 C:\Users\Jessi\OneDrive\Documents\MITT\Visual Studio\ASP.NET\FinalProject\libraryFinal\FinalProject\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Jessi\OneDrive\Documents\MITT\Visual Studio\ASP.NET\FinalProject\libraryFinal\FinalProject\bin\Debug\net8.0\appsettings.json
 C:\Users\Jessi\OneDrive\Documents\MITT\Visual Studio\ASP.NET\FinalProject\libraryFinal\FinalProject\bin\Debug\net8.0\FinalProject.exe
@@ -43,3 +53,4 @@ C:\Users\Jessi\OneDrive\Documents\MITT\Visual Studio\ASP.NET\FinalProject\librar
 C:\Users\Jessi\OneDrive\Documents\MITT\Visual Studio\ASP.NET\FinalProject\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.pdb
 C:\Users\Jessi\OneDrive\Documents\MITT\Visual Studio\ASP.NET\FinalProject\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.genruntimeconfig.cache
 C:\Users\Jessi\OneDrive\Documents\MITT\Visual Studio\ASP.NET\FinalProject\libraryFinal\FinalProject\obj\Debug\net8.0\ref\FinalProject.dll
+>>>>>>> 593395d97d002d28d50c4db0280ee3be58370c27
