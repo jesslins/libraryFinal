@@ -17,7 +17,7 @@ namespace FinalProject
         public async Task<List<Author>> GetAuthors()
         {
             // Fetch all books from the Author table asynchronously
-            return await _context.Author.ToListAsync();
+            return await _context.Authors.ToListAsync();
         }
     }
 }
