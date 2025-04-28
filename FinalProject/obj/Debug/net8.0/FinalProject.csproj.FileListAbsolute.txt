@@ -1,0 +1,8 @@
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.csproj.AssemblyReference.cache
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.AssemblyInfoInputs.cache
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.AssemblyInfo.cs
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Abeeb\OneDrive\Documents\Wonderland\High School\mitt\grade 12\methodologies\libraryFinal\FinalProject\obj\Debug\net8.0\FinalProject.sourcelink.json
