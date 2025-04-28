@@ -1,7 +1,6 @@
 using FinalProject.Models;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
-using FinalProject.Models;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.AspNetCore.Builder;
 
@@ -100,14 +99,13 @@ namespace FinalProject
             // 2 POST create new book
             app.MapPost("/books", async (LibraryContext db, IMemoryCache cache, Book book) =>
             {
-                db.Books.Add(book);
-                await db.SaveChangesAsync();
                 var author = db.Authors.FirstOrDefault(a => a.Id == book.AuthorId);
                 if (author is null)
                 {
                     return Results.NotFound($"Author with ID {book.AuthorId} not found.");
                 }
-
+                db.Books.Add(book);
+                await db.SaveChangesAsync();
                 author.Books.Add(book);
                 await db.SaveChangesAsync();
                 cache.Remove("books_cache");
@@ -127,7 +125,7 @@ namespace FinalProject
                 cache.Remove("authors_cache");
                 return Results.Ok(new {author.Id, author.Name});
             })
-            .Produces<Author>(StatusCodes.Status200OK)
+            .Produces<object>(StatusCodes.Status200OK)
             .Produces(StatusCodes.Status404NotFound);
 
             // 2 PUT completely update a book
@@ -142,7 +140,7 @@ namespace FinalProject
                 cache.Remove("books_cache");
                 return Results.Ok(new { book.Id, book.Title, AuthorId = book.AuthorId });
             })
-            .Produces<Book>(StatusCodes.Status200OK)
+            .Produces<object>(StatusCodes.Status200OK)
             .Produces(StatusCodes.Status404NotFound);
 
             // 1 DELETE author

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace FinalProject
 {
-    internal class BookRepository
+    public class BookRepository
     {
         private readonly LibraryContext _context;
 
