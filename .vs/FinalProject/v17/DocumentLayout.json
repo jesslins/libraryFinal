@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\models\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,24 +27,20 @@
       "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\authorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\models\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\librarycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\librarycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|c:\\users\\jessi\\onedrive\\documents\\mitt\\visual studio\\asp.net\\finalproject\\libraryfinal\\finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5B3FA693-E221-4B5D-A6D8-205B18BD9048}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -49,7 +57,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,6 +70,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AuthorsController.cs",
+              "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Controllers\\AuthorsController.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Controllers\\AuthorsController.cs",
+              "ToolTip": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Controllers\\AuthorsController.cs",
+              "RelativeToolTip": "FinalProject\\Controllers\\AuthorsController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCYAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T00:11:31.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\appsettings.json",
               "RelativeDocumentMoniker": "FinalProject\\appsettings.json",
@@ -73,12 +94,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -90,33 +107,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Dtos.cs",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Models\\Dtos.cs",
               "RelativeDocumentMoniker": "FinalProject\\Models\\Dtos.cs",
               "ToolTip": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Models\\Dtos.cs",
               "RelativeToolTip": "FinalProject\\Models\\Dtos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T18:57:34.595Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "AuthorRepository.cs",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\AuthorRepository.cs",
               "RelativeDocumentMoniker": "FinalProject\\AuthorRepository.cs",
               "ToolTip": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\AuthorRepository.cs",
               "RelativeToolTip": "FinalProject\\AuthorRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T18:51:07.336Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "LibraryContext.cs",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\LibraryContext.cs",
               "RelativeDocumentMoniker": "FinalProject\\LibraryContext.cs",
@@ -129,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Models\\Book.cs",
               "RelativeDocumentMoniker": "FinalProject\\Models\\Book.cs",
@@ -142,33 +159,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Program.cs",
               "RelativeDocumentMoniker": "FinalProject\\Program.cs",
               "ToolTip": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Program.cs",
               "RelativeToolTip": "FinalProject\\Program.cs",
-              "ViewState": "AQIAAMcAAAAAAAAAAAAgwNgAAAAjAAAA",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAwwJMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T21:31:11.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "BookRepository.cs",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\BookRepository.cs",
               "RelativeDocumentMoniker": "FinalProject\\BookRepository.cs",
               "ToolTip": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\BookRepository.cs",
               "RelativeToolTip": "FinalProject\\BookRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T18:51:10.916Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "FinalProject\\Controllers\\BooksController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAuwCgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T00:11:51.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Author.cs",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\Models\\Author.cs",
               "RelativeDocumentMoniker": "FinalProject\\Models\\Author.cs",
@@ -181,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "FinalProject.http",
               "DocumentMoniker": "C:\\Users\\Jessi\\OneDrive\\Documents\\MITT\\Visual Studio\\ASP.NET\\FinalProject\\libraryFinal\\FinalProject\\FinalProject.http",
               "RelativeDocumentMoniker": "FinalProject\\FinalProject.http",
@@ -189,7 +223,8 @@
               "RelativeToolTip": "FinalProject\\FinalProject.http",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-04-27T18:51:09.279Z"
+              "WhenOpened": "2025-04-27T18:51:09.279Z",
+              "EditorCaption": ""
             }
           ]
         }

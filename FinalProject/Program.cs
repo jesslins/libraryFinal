@@ -36,7 +36,7 @@ namespace FinalProject
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
@@ -48,128 +48,6 @@ namespace FinalProject
             app.UseAuthorization();
 
             app.MapControllers();
-
-            // 1st GET all authours
-            app.MapGet("/authors", (LibraryContext db) =>
-            {
-                var authors = db.Authors
-                    .Include(a => a.Books)
-                    .Select(a => new AuthorDto
-                    {
-                        Id = a.Id,
-                        Name = a.Name,
-                        Books = a.Books.Select(b => new BookDto
-                        {
-                            Id = b.Id,
-                            Title = b.Title
-                        }).ToList()
-                    }).ToList();
-                return Results.Ok(authors);
-            })
-            .Produces<List<AuthorDto>>(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status500InternalServerError);
-
-            // 2nd GET all books
-            app.MapGet("/books", (LibraryContext db) =>
-            {
-                var books = db.Books
-                              .Include(b => b.Author)
-                              .Select(b => new
-                              {
-                                  Id = b.Id,
-                                  Title = b.Title,
-                                  AuthorName = b.Author.Name
-                              }).ToList();
-                return Results.Ok(books);
-            })
-            .Produces<List<object>>(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status500InternalServerError);
-
-            // 1 POST create new authour
-            app.MapPost("/authors", async (LibraryContext db, IMemoryCache cache, Author author) =>
-            {
-                db.Authors.Add(author);
-                await db.SaveChangesAsync();
-                cache.Remove("authors_cache");
-                return Results.Created($"/authors/{author.Id}", author);
-            })
-            .Produces<Author>(StatusCodes.Status201Created)
-            .Produces(StatusCodes.Status400BadRequest);
-
-            // 2 POST create new book
-            app.MapPost("/books", async (LibraryContext db, IMemoryCache cache, Book book) =>
-            {
-                var author = db.Authors.FirstOrDefault(a => a.Id == book.AuthorId);
-                if (author is null)
-                {
-                    return Results.NotFound($"Author with ID {book.AuthorId} not found.");
-                }
-                db.Books.Add(book);
-                await db.SaveChangesAsync();
-                author.Books.Add(book);
-                await db.SaveChangesAsync();
-                cache.Remove("books_cache");
-                return Results.Created($"/books/{book.Id}", new { book.Id, book.Title, AuthorId = book.AuthorId});
-            })
-            .Produces(StatusCodes.Status404NotFound)
-            .Produces(StatusCodes.Status201Created);
-
-            // 1 PUT completely update an author
-            app.MapPut("/authors/{id}", async (LibraryContext db, IMemoryCache cache, int id, Author updatedAuthor) =>
-            {
-                var author = db.Authors.FirstOrDefault(a => a.Id == id);
-                if (author is null) return Results.NotFound();
-
-                author.Name = updatedAuthor.Name;
-                await db.SaveChangesAsync();
-                cache.Remove("authors_cache");
-                return Results.Ok(new {author.Id, author.Name});
-            })
-            .Produces<object>(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status404NotFound);
-
-            // 2 PUT completely update a book
-            app.MapPut("/books/{id}", async (LibraryContext db, IMemoryCache cache, int id, Book updatedBook) =>
-            {
-                var book = db.Books.FirstOrDefault(b => b.Id == id);
-                if (book is null) return Results.NotFound();
-
-                book.Title = updatedBook.Title;
-                book.AuthorId = updatedBook.AuthorId;
-                await db.SaveChangesAsync();
-                cache.Remove("books_cache");
-                return Results.Ok(new { book.Id, book.Title, AuthorId = book.AuthorId });
-            })
-            .Produces<object>(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status404NotFound);
-
-            // 1 DELETE author
-            app.MapDelete("/authors/{id}", async (LibraryContext db, IMemoryCache cache, int id) =>
-            {
-                var author = db.Authors.FirstOrDefault(a => a.Id == id);
-                if (author is null) return Results.NotFound();
-
-                db.Authors.Remove(author);
-                await db.SaveChangesAsync();
-                cache.Remove("authors_cache");
-                return Results.Ok();
-            })
-            .Produces(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status404NotFound);
-
-            // 2 DELETE book
-            app.MapDelete("/books/{id}", async (LibraryContext db, IMemoryCache cache, int id) =>
-            {
-                var book = db.Books.FirstOrDefault(b => b.Id == id);
-                if (book is null) return Results.NotFound();
-
-                db.Books.Remove(book);
-                await db.SaveChangesAsync();
-                cache.Remove("books_cache");
-                return Results.Ok();
-            })
-            .Produces(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status404NotFound);
 
             // caching for books
             app.MapGet("/books/memory-cache", GetBooksWithMemoryCache);
@@ -215,15 +93,15 @@ namespace FinalProject
 
 
         //books from library memory
-        private static async Task<IResult> GetBooksWithMemoryCache(BookRepository repo, IMemoryCache cache, int pageNumber = 1, int pageSize = 5)
+        private static async Task<IResult> GetBooksWithMemoryCache(BookRepository repo, IMemoryCache cache)
         {
-            var cacheKey = $"books_cache_{pageNumber}_{pageSize}";
+            var cacheKey = "books_cache";
 
             if (!cache.TryGetValue(cacheKey, out List<Book>? books))
             {
                 try
                 {
-                    books = await repo.GetBooks(pageNumber, pageSize);
+                    books = await repo.GetBooks();
                     cache.Set(cacheKey, books, new MemoryCacheEntryOptions
                     {
                         AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
@@ -240,15 +118,15 @@ namespace FinalProject
         }
 
         // book authors from library memory
-        private static async Task<IResult> GetAuthorsWithMemoryCache(AuthorRepository repo, IMemoryCache cache, int pageNumber = 1, int pageSize = 5)
+        private static async Task<IResult> GetAuthorsWithMemoryCache(AuthorRepository repo, IMemoryCache cache)
         {
-            var cacheKey = $"authors_cache_{pageNumber}_{pageSize}";
+            var cacheKey = "authors_cache";
 
             if (!cache.TryGetValue(cacheKey, out List<Author>? authors))
             {
                 try
                 {
-                    authors = await repo.GetAuthors(pageNumber, pageSize);
+                    authors = await repo.GetAuthors();
                     cache.Set(cacheKey, authors, new MemoryCacheEntryOptions
                     {
                         AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),

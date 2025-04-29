@@ -15,13 +15,11 @@ namespace FinalProject
         }
 
         // GetBooks fetches all books from the database
-        public async Task<List<Book>> GetBooks(int pageNumber = 1, int pageSize = 5)
+        public async Task<List<Book>> GetBooks()
         {
             return await _context.Books
                 .Include(b => b.Author)
                 .OrderBy(b => b.Id)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
                 .ToListAsync();
         }
     }
