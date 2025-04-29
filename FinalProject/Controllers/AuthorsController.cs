@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace FinalProject.Controllers
 {
@@ -22,6 +23,9 @@ namespace FinalProject.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AuthorDto>>> GetAuthors(int pageNumber = 1, int pageSize = 5)
         {
+            if (_cache.TryGetValue("authors_cache", out List<AuthorDto> cachedAuthors))
+                return Ok(cachedAuthors);
+
             var authors = await _context.Authors
                 .Include(a => a.Books)
                 .OrderBy(a => a.Id)
@@ -36,8 +40,9 @@ namespace FinalProject.Controllers
                         Id = b.Id,
                         Title = b.Title
                     }).ToList()
-                })
-                .ToListAsync();
+                }).ToListAsync();
+
+            _cache.Set("authors_cache", authors, TimeSpan.FromMinutes(5));
 
             return Ok(authors);
         }

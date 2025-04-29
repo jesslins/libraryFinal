@@ -24,6 +24,9 @@ namespace FinalProject.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BookDto>>> GetBooks(int pageNumber = 1, int pageSize = 5)
         {
+            if (_cache.TryGetValue("books_cache", out List<BookDto> cachedBooks))
+                return Ok(cachedBooks);
+
             var books = await _context.Books
                 .Include(b => b.Author)
                 .OrderBy(b => b.Id)
@@ -36,6 +39,8 @@ namespace FinalProject.Controllers
                     AuthorName = b.Author.Name
                 })
                 .ToListAsync();
+
+            _cache.Set("books_cache", books, TimeSpan.FromMinutes(5));
 
             return Ok(books);
         }
@@ -61,6 +66,7 @@ namespace FinalProject.Controllers
             _context.Books.Add(book);
             await _context.SaveChangesAsync();
             _cache.Remove("books_cache");
+            _cache.Remove("authors_cache");
 
             bookDto.Id = book.Id; // update the DTO with the newly created ID
 
@@ -84,6 +90,7 @@ namespace FinalProject.Controllers
 
             await _context.SaveChangesAsync();
             _cache.Remove("books_cache");
+            _cache.Remove("authors_cache");
 
             bookDto.Id = book.Id; // ensure the ID is returned correctly
 
@@ -100,6 +107,7 @@ namespace FinalProject.Controllers
             _context.Books.Remove(book);
             await _context.SaveChangesAsync();
             _cache.Remove("books_cache");
+            _cache.Remove("authors_cache");
 
             return NoContent();
         }

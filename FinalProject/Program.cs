@@ -30,9 +30,6 @@ namespace FinalProject
                     options.Window = TimeSpan.FromSeconds(300);
                 }));
 
-            builder.Services.AddScoped<BookRepository>();
-            builder.Services.AddScoped<AuthorRepository>();
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -48,11 +45,6 @@ namespace FinalProject
             app.UseAuthorization();
 
             app.MapControllers();
-
-            // caching for books
-            app.MapGet("/books/memory-cache", GetBooksWithMemoryCache);
-            // caching for authors
-            app.MapGet("/authors/memory-cache", GetAuthorsWithMemoryCache);
 
             using (var scope = app.Services.CreateScope())
             {
@@ -90,58 +82,7 @@ namespace FinalProject
 
             app.Run();
         }
-
-
-        //books from library memory
-        private static async Task<IResult> GetBooksWithMemoryCache(BookRepository repo, IMemoryCache cache)
-        {
-            var cacheKey = "books_cache";
-
-            if (!cache.TryGetValue(cacheKey, out List<Book>? books))
-            {
-                try
-                {
-                    books = await repo.GetBooks();
-                    cache.Set(cacheKey, books, new MemoryCacheEntryOptions
-                    {
-                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
-                        Priority = CacheItemPriority.High
-                    });
-                }
-                catch (Exception ex)
-                {
-                    return Results.Problem(ex.Message);
-                }
-            }
-
-            return Results.Ok(new { Data = books });
-        }
-
-        // book authors from library memory
-        private static async Task<IResult> GetAuthorsWithMemoryCache(AuthorRepository repo, IMemoryCache cache)
-        {
-            var cacheKey = "authors_cache";
-
-            if (!cache.TryGetValue(cacheKey, out List<Author>? authors))
-            {
-                try
-                {
-                    authors = await repo.GetAuthors();
-                    cache.Set(cacheKey, authors, new MemoryCacheEntryOptions
-                    {
-                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
-                        Priority = CacheItemPriority.High
-                    });
-                }
-                catch (Exception ex)
-                {
-                    return Results.Problem(ex.Message);
-                }
-            }
-
-            return Results.Ok(new { Data = authors });
-        }
     }
-  }
+}
 
 
